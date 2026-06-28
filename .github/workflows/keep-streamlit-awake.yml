@@ -1,0 +1,17 @@
+
+name: Keep Streamlit App Awake
+
+on:
+  schedule:
+    # Runs every 10 hours
+    - cron: "17 */10 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Visit Streamlit app
+        run: |
+          curl -L --max-time 60 --retry 3 --retry-delay 10 "https://buildmoretrains.streamlit.app/"
