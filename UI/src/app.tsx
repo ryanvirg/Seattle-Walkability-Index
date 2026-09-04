@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import maplibregl, { GeoJSONSource, Map as MapLibreMap, Marker } from 'maplibre-gl';
 import { loadWalkabilityData } from './data';
-import { baseCollections, personalizeWalkability, topNeighborhoods } from './scoring';
+import { personalizeWalkability, topNeighborhoods } from './scoring';
 import type {
   FishnetProperties,
   GeoCollection,
@@ -173,7 +173,11 @@ export default function App() {
     loadWalkabilityData()
       .then((data) => {
         if (cancelled) return;
-        const base = baseCollections(data.fishnet, data.neighborhoods);
+        const base = personalizeWalkability(
+          data.fishnet,
+          data.neighborhoods,
+          DEFAULT_PREFERENCES,
+        );
         setRawData(data);
         setDisplayData(base);
       })
@@ -228,7 +232,11 @@ export default function App() {
     if (!rawData) return;
     setPreferences(DEFAULT_PREFERENCES);
     setAppliedPreferences(null);
-    setDisplayData(baseCollections(rawData.fishnet, rawData.neighborhoods));
+    setDisplayData(personalizeWalkability(
+      rawData.fishnet,
+      rawData.neighborhoods,
+      DEFAULT_PREFERENCES,
+    ));
   };
 
   return (

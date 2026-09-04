@@ -33,31 +33,6 @@ function rankNormalize(values: number[]): number[] {
   return values.map((value) => ranks.get(value) ?? 0);
 }
 
-export function baseCollections(
-  fishnet: GeoCollection<FishnetProperties>,
-  neighborhoods: GeoCollection<NeighborhoodProperties>,
-) {
-  return {
-    fishnet: {
-      ...fishnet,
-      features: fishnet.features.map((feature) => ({
-        ...feature,
-        properties: { ...feature.properties, display_score: numberOr(feature.properties.walk_score, 0) },
-      })),
-    },
-    neighborhoods: {
-      ...neighborhoods,
-      features: neighborhoods.features.map((feature) => ({
-        ...feature,
-        properties: {
-          ...feature.properties,
-          display_score: numberOr(feature.properties.rank_normalized_walk_score, 0),
-        },
-      })),
-    },
-  };
-}
-
 export function personalizeWalkability(
   fishnet: GeoCollection<FishnetProperties>,
   neighborhoods: GeoCollection<NeighborhoodProperties>,
