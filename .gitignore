@@ -1,4 +1,6 @@
-UI/dist/bundles/*
+UI/dist/
+UI/node_modules/
+*.tsbuildinfo
 node_modules/
 .backups/
 GpMessages/

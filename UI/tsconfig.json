@@ -1,21 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "esnext", 
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "strict": true,
-    "jsx": "react-jsx", 
+    "jsx": "react-jsx",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "typeRoots": ["./node_modules/@types", "./types"],
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "baseUrl": "./src",
-    "types": []
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
   "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules"
+    "src/main.tsx",
+    "src/app.tsx",
+    "src/data.ts",
+    "src/scoring.ts",
+    "src/scaler_calculations.tsx",
+    "src/types.ts",
+    "src/vite-env.d.ts"
   ]
 }

@@ -1,53 +1,29 @@
 {
-  "name": "ui",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "seattle-walkability-ui",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
   "scripts": {
-    "log": "echo 'Starting deployment from: $(pwd)'",
-    "start": "npm run log && npm run build && npm run serve",
-    "build": "webpack --config webpack.config.js --mode production --progress && ls -la dist",
-    "serve": "serve -l ${PORT:-8081} -s dist",
-    "dev": "webpack serve --config webpack.config.js --mode development --open --hot --port 8080",
-    "clean": "del-cli 'dist/**' '!dist/styles.css' '!dist/index.html'"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/d3": "^7.4.3",
-    "@types/leaflet": "^1.9.14",
-    "axios": "^1.7.7",
-    "css-loader": "^7.1.2",
-    "d3-hexbin": "0.2.2",
-    "del-cli": "^5.1.0",
-    "style-loader": "^4.0.0",
-    "ts-loader": "^9.5.1",
-    "webpack": "^5.92.1",
-    "webpack-bundle-analyzer": "^4.10.2",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.9.0"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --base=/Seattle-Walkability-Index/",
+    "preview": "vite preview",
+    "prepare:data": "node scripts/prepare_web_data.mjs"
   },
   "dependencies": {
-    "@arcgis/core": "^4.21.0",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@mui/icons-material": "^5.15.21",
-    "@mui/material": "^5.15.21",
-    "@types/chart.js": "^2.9.41",
-    "@types/leaflet.heat": "^0.2.4",
+    "maplibre-gl": "^5.6.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "overrides": {
+    "@mapbox/jsonlint-lines-primitives": "2.0.2"
+  },
+  "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "axios": "^1.7.7",
-    "chart.js": "^4.4.3",
-    "d3": "^7.9.0",
-    "d3-hexbin": "0.2.2",
-    "h3-js": "^4.1.0",
-    "leaflet": "^1.9.4",
-    "leaflet.heat": "^0.2.0",
-    "mathjs": "^13.0.2",
-    "react": "^18.3.1",
-    "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18.3.1",
-    "serve": "^14.0.1"
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0"
   }
 }
