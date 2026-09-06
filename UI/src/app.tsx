@@ -248,7 +248,7 @@ export default function App() {
         <nav aria-label="Application links">
           <button type="button" onClick={() => setAboutOpen(true)}>How it works</button>
           <a href="https://data.seattle.gov/" target="_blank" rel="noreferrer">Data</a>
-          <a href="https://github.com/smileshey/Seattle-Walkability-Index" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://github.com/ryanvirg/Seattle-Walkability-Index" target="_blank" rel="noreferrer">GitHub</a>
         </nav>
       </header>
       <div className="view-toggle" role="group" aria-label="Map geography">
@@ -289,7 +289,7 @@ export default function App() {
           <p>The base index combines sidewalks, parks, trails, and bicycle infrastructure. Your selections adjust that foundation using slope, street speed and crashes, business density, and crime-density scalers.</p>
           <p>Scores are recalculated for each fishnet cell, ranked from 0–100, aggregated by neighborhood, adjusted for neighborhood area, and ranked again. These are comparative planning scores—not guarantees about personal safety, accessibility, or route conditions.</p>
           <p>The web map uses MapLibre and local, precomputed GeoJSON. It does not require ArcGIS Online at runtime.</p>
-          <a href="https://github.com/smileshey/Seattle-Walkability-Index#how-it-works" target="_blank" rel="noreferrer">Read the full methodology on GitHub ↗</a>
+          <a href="https://github.com/ryanvirg/Seattle-Walkability-Index#how-it-works" target="_blank" rel="noreferrer">Read the full methodology on GitHub ↗</a>
         </section>
       </div>}
     </main>

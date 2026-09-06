@@ -2,7 +2,7 @@
 
 An interactive map for comparing walkability across Seattle and exploring how personal preferences change the results.
 
-**Web app:** [smileshey.github.io/Seattle-Walkability-Index](https://smileshey.github.io/Seattle-Walkability-Index/)
+**Web app:** [ryanvirg.github.io/Seattle-Walkability-Index](https://ryanvirg.github.io/Seattle-Walkability-Index/)
 
 The browser application is a static React site. It uses MapLibre GL JS, an OpenFreeMap basemap, and GeoJSON files stored in this repository, so viewing the deployed app does not require an ArcGIS Online subscription or an application server.
 
@@ -50,7 +50,7 @@ Click **Recalculate walkscore** to apply the preferences. Use the map toggle to 
 Node.js 20 or newer is required.
 
 ```bash
-git clone https://github.com/smileshey/Seattle-Walkability-Index.git
+git clone https://github.com/ryanvirg/Seattle-Walkability-Index.git
 cd Seattle-Walkability-Index/UI
 nvm install
 nvm use
@@ -74,7 +74,7 @@ The workflow at `.github/workflows/deploy-pages.yml` builds and deploys the app 
 For the first deployment, open **Repository settings → Pages**, set **Source** to **GitHub Actions**, and then run the workflow or push a commit to `main`. The deployed URL is:
 
 ```text
-https://smileshey.github.io/Seattle-Walkability-Index/
+https://ryanvirg.github.io/Seattle-Walkability-Index/
 ```
 
 No DigitalOcean service is needed after the Pages site has been verified.
